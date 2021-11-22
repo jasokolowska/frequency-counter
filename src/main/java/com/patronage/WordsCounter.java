@@ -1,20 +1,25 @@
 package com.patronage;
 
+import java.io.File;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class WordsCounter {
+    DataReader reader = new DataReader();
+    DataWriter writer = new DataWriter();
     private Map<String, Integer> sortedWords = new LinkedHashMap<>();
 
     public WordsCounter() {
     }
 
-    public void countWords(String text) {
-        List<String> wordList = getWordList(text);
+    public Map<String, Integer> countWords(File file) {
+        List<String> wordList = getWordList(reader.readFile(file));
         Set<String> uniqueWordsArray = getUniqueWords(wordList);
         Map<String, Integer> wordCounter = getCountedWords(wordList, uniqueWordsArray);
 
-        sortedWords = sortCountedWords(wordCounter);
+        writer.saveDataInNewFile(file.getName(), sortCountedWords(wordCounter));
+
+        return sortCountedWords(wordCounter);
     }
 
     private Map<String, Integer> sortCountedWords(Map<String, Integer> wordCounter) {

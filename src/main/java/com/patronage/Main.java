@@ -1,22 +1,21 @@
 package com.patronage;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.stream.Collectors;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        File file = new File("C:\\Development\\Projects\\frequency-counter\\src\\main\\resources\\intive_patronage.txt");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("*********************** FREQUENCY COUNTER ***********************");
+        System.out.println("Podaj ścieżkę do pliku: ");
+        String path = scanner.nextLine();
 
-        DataReader reader = new DataReader();
-        String text = reader.readFile(file);
+        File file = new File(path);
 
         WordsCounter wordsCounter = new WordsCounter();
-        wordsCounter.countWords(text);
+        Map<String, Integer> countedWords = wordsCounter.countWords(file);
+        System.out.println(countedWords);
     }
 
 }
