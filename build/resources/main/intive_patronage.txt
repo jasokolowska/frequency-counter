@@ -1,0 +1,55 @@
+About the project
+The main reason of creating the Patronage Program was a need for finding an alternative to the standard internship programs. We focused on providing a maximum dose of knowledge with an optimal time occupancy of our employees – project mentors. Each edition gives participants the opportunity to see how a real end-to-end application development looks like under the guidance of our best professionals. Projects they do are open source – they are their creators and owners – they can praise them in public and develop after they finish participation in the Program.
+
+Patronage is not just a great opportunity to acquire valuable experience, pass required by university student training, but also to get a first job. The most motivated and distinctive participants receive a job offer. Every year 5 to 10 participants get a job at intive.
+
+Story behind it all
+Patronage was initially a local bottom-up initiative (started in 2007 in BLStream in Szczecin). The original cause of its initiation was the desire of our employees to deliver more practical knowledge to students and graduates in a new form, and on the other hand, the need for companies to build the employer image in this target group.
+
+It was a response to the following factors
+
+1. Graduates were not prepared to enter the job market
+
+A situation of young people entering the job market was not easy. There were few people who cared enough to help them. Parents usually were too busy with their work and had no idea how the contemporary job market looked like. Teachers were used to old schemes and systems that did not respond to market needs. Additionally, university teaching standards were not high and it was easy to graduate without deep knowledge of their own specialization and having little understanding of the business around.
+
+2. Szczecin was the city not prepared for IT business
+
+It was the city from which many great talents left every year to look for perspectives somewhere else. After transformation in the 90’s business remained very weak and there were just a few respectable companies to work for. And again, very few people did care to build up their business locally.
+
+Vision
+Our goal was to stop this trend and to prove that a strong software house can grow in Szczecin. We wanted the company to be locally engaged. As we had the impression that no one cared, we wanted to care at least in our IT area and motivate young people. To be spotted, we needed to show our creative side. In 2007 we’ve came up with the Patronage idea.
+
+Program description
+Patronage is a kind of program that gives the student  graduate an opportunity to work within a realistic and useful IT project. The project is created by the participants from the beginning to the end with a full support, it builds strong commitment and identification with the work and the project team.
+
+Thanks to the Patronage the participants can confront the knowledge they gained so far during their studies with the needs of business. Ability to work remotely makes it easy to combine learning with work.
+
+Through all those years we had 860 participants and nearly 100 were employed. Most still work with us and are top-notch specialists.
+
+Program stages
+The project consists of 3 stages
+
+Promotion ( information campaign on college campuses and in social media partners, meetings face to face)
+
+Recruitment ( testing tasks prepared by our developers, assessment center, technology workshops conducted by mentors)
+
+Realization
+
+In the main phase, participants work in project groups on the development of applications. Groups are selected by program participants while applying. These are back-end, front-end, Android, iOS, .NET, QA, UX.
+
+Editions
+In the beginning, editions ware carried out in Szczecin only. As the model turned out to be successful, some editions were also implemented in Wroclaw. Since 2016 the Program has been already running under intive brand.
+
+Every edition of Patronage engages 8-16 of our employees with competence and motivation to share knowledge. Each edition is assessed by participants and mentors and we introduce appropriate changes.
+
+Every year we’ve found more and more appealing projects. And finally, our 10th jubilee edition involved a client who benefited from open-minded, talented and eager to work people.
+
+Jubilee edition
+The task was to design an app for TOZ in Szczecin – a Society for the Protection of Animals. The app presents a list of animals under Society’s supervision. It informs how to help them with the financial contribution and how to become a volunteer. One can also declare to take care of the pet temporarily until the new owner takes over.
+
+During the finals, participants have presented the challenges they have faced, things they’ve learned and the application itself. It was very touching when the TOZ Director thanked us and emphasized the appreciation that so many young people were engaged in the project of their own accord. It was the most rewarding moment.
+
+To sum up
+Trust, collaboration, openness and eagerness to share knowledge – these values are the fundaments of the Patronage Program.
+
+Building a solid business is more fruitful when done together with ecosystem around. We use our position and assets for a wider purpose and it is extremely motivating.
