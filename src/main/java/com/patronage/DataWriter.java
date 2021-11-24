@@ -12,8 +12,8 @@ public class DataWriter {
 
     public void saveDataInNewFile(String fileName, Map<String, Integer> sortedWords) {
         try (
-                var fileWriter = new FileWriter("counted_" + fileName);
-                var writer = new BufferedWriter(fileWriter);
+                FileWriter fileWriter = new FileWriter("counted_" + fileName);
+                BufferedWriter writer = new BufferedWriter(fileWriter);
         ) {
             for (Map.Entry<String, Integer> entry : sortedWords.entrySet()) {
                 writer.write(entry.getKey() + ": " + entry.getValue());

@@ -11,31 +11,22 @@ public class DataReader {
     }
 
     public String readFile(File file) {
-        FileReader fileReader = null;
-        BufferedReader reader = null;
-        StringBuffer stringBuffer = new StringBuffer();
+        StringBuilder stringBuilder = new StringBuilder();
 
-        try {
-            fileReader = new FileReader(file);
-            reader = new BufferedReader(fileReader);
+        try (
+                FileReader fileReader = new FileReader(file);
+                BufferedReader reader = new BufferedReader(fileReader);
+        ) {
             String nextLine = null;
-            int lines = 0;
             while ((nextLine = reader.readLine()) != null) {
-                stringBuffer.append(" " + nextLine);
+                stringBuilder.append(" " + nextLine);
             }
-
         } catch (
                 IOException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                if (reader != null)
-                    reader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
-        return stringBuffer.toString();
+
+        return stringBuilder.toString();
     }
 
 }

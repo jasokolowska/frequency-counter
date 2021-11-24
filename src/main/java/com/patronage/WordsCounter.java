@@ -7,15 +7,17 @@ import java.util.stream.Collectors;
 public class WordsCounter {
     DataReader reader = new DataReader();
     DataWriter writer = new DataWriter();
+    TextConverter converter = new TextConverter();
     private Map<String, Integer> sortedWords = new LinkedHashMap<>();
 
     public WordsCounter() {
     }
 
     public Map<String, Integer> countWords(File file) {
-        List<String> wordList = getWordList(reader.readFile(file));
-        Set<String> uniqueWordsArray = getUniqueWords(wordList);
-        Map<String, Integer> wordCounter = getCountedWords(wordList, uniqueWordsArray);
+        converter.extractWords(reader.readFile(file));
+        List<String> words = converter.getWords();
+        Set<String> uniqueWordsArray = getUniqueWords(words);
+        Map<String, Integer> wordCounter = getCountedWords(words, uniqueWordsArray);
 
         writer.saveDataInNewFile(file.getName(), sortCountedWords(wordCounter));
 
@@ -50,24 +52,5 @@ public class WordsCounter {
             uniqueWordsArray.add(word);
         }
         return uniqueWordsArray;
-    }
-
-    private List<String> getWordList(String text) {
-        String[] words = text.split(" ");
-        List<String> wordList = new ArrayList<>();
-        for (String word : words) {
-            String newWord = word
-                    .replace(".", "")
-                    .replace(",", "")
-                    .replace("(", "")
-                    .replace(")", "")
-                    .replace("–", "")
-                    .trim()
-                    .toLowerCase();
-            if (!word.equals("")) {
-                wordList.add(newWord);
-            }
-        }
-        return wordList;
     }
 }
