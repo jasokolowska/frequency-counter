@@ -1,11 +1,10 @@
 package com.patronage;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class TextConverter {
     private List<String> words = new LinkedList<>();
+    Map<String, Integer> vocabulary = new HashMap<>();
 
     public TextConverter() {
     }
@@ -14,8 +13,9 @@ public class TextConverter {
         String[] words = text.split(" ");
 
         Arrays.stream(words)
-                .filter(word -> word.length() > 1)
-                .forEach(word -> this.words.add(word.toLowerCase()));
+                .map(word -> word.toLowerCase().replaceAll("[\\W]", ""))
+                .filter(word -> !word.equals(""))
+                .forEach(word -> this.words.add(word));
     }
 
     public List<String> getWords() {

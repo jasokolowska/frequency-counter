@@ -15,9 +15,8 @@ public class WordsCounter {
 
     public Map<String, Integer> countWords(File file) {
         converter.extractWords(reader.readFile(file));
-        List<String> words = converter.getWords();
-        Set<String> uniqueWordsArray = getUniqueWords(words);
-        Map<String, Integer> wordCounter = getCountedWords(words, uniqueWordsArray);
+
+        Map<String, Integer> wordCounter = getCountedWords();
 
         writer.saveDataInNewFile(file.getName(), sortCountedWords(wordCounter));
 
@@ -31,26 +30,12 @@ public class WordsCounter {
                         Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
     }
 
-    private Map<String, Integer> getCountedWords(List<String> wordList, Set<String> uniqueWordsArray) {
-        Map<String, Integer> wordCounter = new HashMap<>();
+    private Map<String, Integer> getCountedWords() {
+        Map<String, Integer> vocabulary = new HashMap<>();
 
-        for (String s : uniqueWordsArray) {
-            int counter = 0;
-            for (String s1 : wordList) {
-                if (s.equals(s1)) {
-                    counter++;
-                }
-            }
-            wordCounter.put(s, counter);
-        }
-        return wordCounter;
-    }
+        converter.getWords().stream()
+                .forEach(word -> vocabulary.put(word, vocabulary.getOrDefault(word, 0) + 1));
 
-    private Set<String> getUniqueWords(List<String> wordList) {
-        Set<String> uniqueWordsArray = new HashSet<>();
-        for (String word : wordList) {
-            uniqueWordsArray.add(word);
-        }
-        return uniqueWordsArray;
+        return vocabulary;
     }
 }
