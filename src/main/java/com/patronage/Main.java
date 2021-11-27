@@ -11,6 +11,7 @@ public class Main {
 
         WordsFrequencyApp wordsFrequencyApp = new WordsFrequencyApp();
         wordsFrequencyApp.run();
+
     }
 
 }
