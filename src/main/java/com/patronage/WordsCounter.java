@@ -1,6 +1,5 @@
 package com.patronage;
 
-import java.io.File;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -11,10 +10,10 @@ public class WordsCounter {
     public WordsCounter() {
     }
 
-    public void sortCountedWords(List<String> words) {
+    public Map<String, Integer> sortCountedWords(List<String> words) {
         Map<String, Integer> wordCounter = getCountedWords(words);
 
-        sortedWords = wordCounter.entrySet().stream()
+        return wordCounter.entrySet().stream()
                 .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
                 .collect(Collectors.toMap(Map.Entry::getKey,
                         Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
