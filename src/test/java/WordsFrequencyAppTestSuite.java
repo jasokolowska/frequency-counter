@@ -33,9 +33,9 @@ public class WordsFrequencyAppTestSuite {
             @Test
             void testSaveNewFile() throws IOException {
                 //Given
-                FileWriter fileWriterMock = mock(FileWriter.class);
+                File fileMock = mock(File.class);
 
-                DataWriter writer = new DataWriter(fileWriterMock);
+                DataWriter writer = new DataWriter(fileMock);
                 Map<String, Integer> wordsFrequency = new HashMap<>();
                 wordsFrequency.put("word", 5);
                 wordsFrequency.put("is", 3);

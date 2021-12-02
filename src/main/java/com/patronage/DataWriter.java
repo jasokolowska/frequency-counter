@@ -11,14 +11,15 @@ import java.util.Map;
 
 public class DataWriter {
 
-    private FileWriter fileWriter;
+    private File file;
 
-    public DataWriter(FileWriter fileWriter) {
-        this.fileWriter = fileWriter;
+    public DataWriter(File file) {
+        this.file = file;
     }
 
     public void saveDataInTxt(Map<String, Integer> sortedWords) {
         try (
+                FileWriter fileWriter = new FileWriter(file);
                 BufferedWriter writer = new BufferedWriter(fileWriter);
         ) {
             for (Map.Entry<String, Integer> entry : sortedWords.entrySet()) {
@@ -30,7 +31,7 @@ public class DataWriter {
         }
     }
 
-    public void saveDataInExcel(Map<String, Integer> sortedWords, String excelFilePath) {
+    public void saveDataInExcel(Map<String, Integer> sortedWords) {
         Workbook workbook = new HSSFWorkbook();
         Sheet sheet = workbook.createSheet();
 
@@ -41,8 +42,8 @@ public class DataWriter {
             writeWord(entry, row);
             rowNbr++;
         }
-
-        try (FileOutputStream outputStream = new FileOutputStream(excelFilePath)) {
+        String filePath = file.getAbsolutePath();
+        try (FileOutputStream outputStream = new FileOutputStream(filePath)) {
             workbook.write(outputStream);
         } catch (IOException e) {
             e.printStackTrace();
